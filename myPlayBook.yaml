@@ -1,0 +1,13 @@
+---
+- hosts : all
+  become: yes
+  tasks :
+    - name : install webServer in ubuntu
+      apt:
+        name: apache2
+        state: present
+
+    - name : wanna start web service
+      service:
+        name: apache2
+        state: started
